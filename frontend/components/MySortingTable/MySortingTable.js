@@ -10,6 +10,7 @@ const Countries = {
 };
 
 function MySortingTable(props) {
+  // console.log(JSON.stringify(props));
   function getColumns() {
     return [
       {

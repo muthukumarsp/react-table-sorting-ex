@@ -143,6 +143,7 @@ const handleMultiSort = (state, label) => {
 
 function SortReducer(sortState = initialState, action) {
   let finalState;
+  // console.log(JSON.stringify(sortState));
   switch (action.type) {
     case 'SORT_ROW':
       if (action.isMultiSort) {
@@ -167,6 +168,7 @@ function SortReducer(sortState = initialState, action) {
       finalState = sortState;
       break;
   }
+  // console.log(JSON.stringify(finalState));
   return finalState;
 }
 export default SortReducer;
