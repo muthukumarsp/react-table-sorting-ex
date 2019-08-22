@@ -5,12 +5,6 @@ import { Provider } from 'react-redux';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { syncHistoryWithStore, routerReducer } from 'react-router-redux';
 import rootReducer from 'Global/RootReducer.js';
-import {
-  validatorRequired,
-  validatorAlphaNumeric,
-} from 'CommonUtil/CommonUtil.js';
-// import { LocalForm } from 'react-redux-form';
-// import MSFormInput from 'MSFormInput/MSFormInput';
 import MySortingTable from 'MySortingTable/MySortingTable';
 import SortReducer from '../components/Global/SortReducer';
 

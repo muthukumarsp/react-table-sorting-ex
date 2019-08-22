@@ -1,7 +1,6 @@
 import React from 'react';
 import { expect } from 'chai';
 import { shallow, mount, render } from 'enzyme';
-import { Provider } from 'react-redux';
 import SortReducer from '../components/Global/SortReducer';
 
 function jsonEqual(a, b) {
@@ -113,7 +112,7 @@ describe('Test SortReducer: ', function() {
       currentSortingKey: 'name',
       isMultiSortActive: false,
     };
-    console.log(JSON.stringify(SortReducer(currentState, action)));
+    // console.log(JSON.stringify(SortReducer(currentState, action)));
     expect(jsonEqual(expectedState, SortReducer(currentState, action))).to.be
       .true;
   });
@@ -151,7 +150,7 @@ describe('Test SortReducer: ', function() {
       isMultiSortActive: true,
       multiSortKeyMap: [['name', { sortType: 1, keyOrder: 1 }]],
     };
-    console.log(JSON.stringify(SortReducer(currentState, action)));
+    // console.log(JSON.stringify(SortReducer(currentState, action)));
     expect(jsonEqual(expectedState, SortReducer(currentState, action))).to.be
       .true;
   });

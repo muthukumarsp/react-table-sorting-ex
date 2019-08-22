@@ -8,9 +8,10 @@ const Countries = {
   dk: 'Denmark',
   in: 'India',
 };
-
+/* MySortingTable : For multi column selection, altKey is used to support in Mac machines.
+    because ctrl + click = rightclick in Mac
+  */
 function MySortingTable(props) {
-  // console.log(JSON.stringify(props));
   function getColumns() {
     return [
       {
@@ -21,7 +22,8 @@ function MySortingTable(props) {
             label => ({
               onClick: event => {
                 event.stopPropagation();
-                props.sortTable(label, event.altKey);
+
+                props.sortTable(label, event.altKey || event.ctrlKey);
               },
             }),
           ],
@@ -40,7 +42,7 @@ function MySortingTable(props) {
             label => ({
               onClick: event => {
                 event.stopPropagation();
-                props.sortTable(label, event.altKey);
+                props.sortTable(label, event.altKey || event.ctrlKey);
               },
             }),
           ],
@@ -59,10 +61,7 @@ function MySortingTable(props) {
             label => ({
               onClick: event => {
                 event.stopPropagation();
-                props.sortTable('tools', event.altKey);
-                if (event.altKey) {
-                  console.debug('alt+click has just happened!');
-                }
+                props.sortTable('tools', event.altKey || event.ctrlKey);
               },
             }),
           ],
@@ -88,7 +87,7 @@ function MySortingTable(props) {
             label => ({
               onClick: event => {
                 event.stopPropagation();
-                props.sortTable(label, event.altKey);
+                props.sortTable(label, event.altKey || event.ctrlKey);
               },
             }),
           ],
